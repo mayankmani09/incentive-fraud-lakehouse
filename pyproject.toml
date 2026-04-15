@@ -1,0 +1,16 @@
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.sqlfluff.core]
+dialect = "trino"
+templater = "dbt"
+sql_file_exts = ".sql"
+
+[tool.sqlfluff.templater.dbt]
+project_dir = "dbt"
+profiles_dir = "dbt/profiles"

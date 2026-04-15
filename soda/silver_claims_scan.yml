@@ -1,0 +1,4 @@
+data_source trino_local:
+  type: trino
+  host: localhost
+  port: 8080

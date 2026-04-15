@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: fct_claim_fraud_signals
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: claim_id
+        data_type: varchar
+        tests:
+          - not_null
+      - name: risk_band
+        data_type: varchar
+        tests:
+          - accepted_values:
+              values: ["low", "medium", "high"]

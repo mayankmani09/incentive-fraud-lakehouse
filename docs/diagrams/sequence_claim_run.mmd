@@ -1,0 +1,10 @@
+sequenceDiagram
+  participant P as Portal
+  participant V as Validator
+  participant B as Bronze
+  participant S as Silver
+  participant G as Gold
+  P->>V: claim event
+  V->>B: raw write
+  B->>S: transform
+  S->>G: build marts

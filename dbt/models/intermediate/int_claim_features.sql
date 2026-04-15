@@ -1,0 +1,1 @@
+select event_id, claim_id, claimant_id, partner_id, risk_score, risk_band, claim_rank_for_claimant, claim_count_by_partner, avg_partner_rebate_amount, is_amount_outlier from {{ source("iceberg", "silver_claim_risk_features") }}

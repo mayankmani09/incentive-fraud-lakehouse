@@ -1,0 +1,1 @@
+select claim_id, claimant_id, partner_id, rebate_amount, risk_score, risk_band, is_flagged_for_review, case when risk_band = "high" then "open" else "monitor" end as queue_status, case when risk_score >= 60 then "review within 4h" when risk_score >= 30 then "review within 1d" else "no action" end as sla_bucket from {{ ref("fct_claim_fraud_signals") }}

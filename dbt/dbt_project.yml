@@ -1,0 +1,16 @@
+name: incentive_fraud
+version: "1.0"
+config-version: 2
+profile: incentive_fraud
+model-paths: ["models"]
+macro-paths: ["macros"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+models:
+  incentive_fraud:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: table
+    marts:
+      +materialized: table
