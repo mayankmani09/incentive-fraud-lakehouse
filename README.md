@@ -27,7 +27,7 @@ flowchart LR
     E --> F[AI Explainability Layer]
     E --> G[Serving / Investigator API]
     D -. traces .-> H[OpenTelemetry]
-    E -. checks .-> I[Great Expectations / Soda]
+    D -. checks .-> I[Great Expectations / Soda]
     G -. metrics .-> J[Prometheus / Grafana]
 ```
 
