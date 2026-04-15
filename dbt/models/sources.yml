@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: iceberg
+    schema: default
+    tables:
+      - name: silver_claims
+      - name: silver_claim_risk_features

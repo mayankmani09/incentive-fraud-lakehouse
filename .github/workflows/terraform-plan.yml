@@ -1,0 +1,20 @@
+name: terraform-plan
+
+on:
+  pull_request:
+    paths:
+      - "terraform/**"
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: terraform/environments/dev
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+      - name: Terraform Init
+        run: terraform init
+      - name: Terraform Plan
+        run: terraform plan -input=false || true

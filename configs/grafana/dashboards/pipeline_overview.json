@@ -1,0 +1,25 @@
+{
+  "title": "Fraud Pipeline Overview",
+  "panels": [
+    {
+      "type": "stat",
+      "title": "Claims Processed",
+      "targets": [
+        {
+          "expr": "claims_processed_total"
+        }
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "Claims Flagged",
+      "targets": [
+        {
+          "expr": "claims_flagged_total"
+        }
+      ]
+    }
+  ],
+  "schemaVersion": 39,
+  "version": 1
+}

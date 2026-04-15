@@ -1,0 +1,4 @@
+contract_name: claims_submitted
+version: 1
+owner: fraud-platform
+primary_key: event_id
