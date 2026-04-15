@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 class ClaimSubmitted(BaseModel):
     event_id: str
-    event_type: str = Field(pattern="claims.submitted")
+    event_type: str = Field(pattern=r"^claims\.submitted$")
     event_ts: str
     claim_id: str
     claimant_id: str
@@ -18,7 +18,7 @@ class ClaimSubmitted(BaseModel):
     country_code: str
     payment_account_fingerprint: Optional[str] = None
     device_fingerprint: Optional[str] = None
-    metadata: Dict[str, Any] = {}
+    metadata: Dict[str, Any] = Field(default_factory=dict)
 
 class ContractViolation(BaseModel):
     contract_name: str
@@ -27,4 +27,4 @@ class ContractViolation(BaseModel):
 
 class ValidationResult(BaseModel):
     is_valid: bool
-    violations: List[ContractViolation] = []
+    violations: List[ContractViolation] = Field(default_factory=list)
